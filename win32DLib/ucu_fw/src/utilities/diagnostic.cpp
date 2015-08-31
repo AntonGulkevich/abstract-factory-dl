@@ -313,7 +313,7 @@ void Diagnostic::FillRegisterData(UINT patternNum, IOTYPES type, UINT num)
 				for(UINT i = 0; i < (UINT)REGISTER_ID::COUNTREGISTERS; i++)
 					if (ch->GetRegisterT((REGISTER_ID)i)->id != REGISTER_ID::NULLID)
 					{
-						RegisterData* data = reinterpret_cast<RegisterData*>(&cdata.data[size]);
+						auto data = reinterpret_cast<RegisterData*>(&cdata.data[size]);
 						data->id = (BYTE)ch->GetRegisterT((REGISTER_ID)i)->id;
 						data->type = (BYTE)ch->GetRegisterT((REGISTER_ID)i)->type;
 						data->isFilled =  ch->GetRegister((REGISTER_ID)i)->IsFilled() ? 1 : 0;
@@ -324,14 +324,14 @@ void Diagnostic::FillRegisterData(UINT patternNum, IOTYPES type, UINT num)
 						case rtDec:
 						{
 							data->size = 4;
-							int val = ch->GetRegister((REGISTER_ID)i)->GetValueInt();
+							auto val = ch->GetRegister((REGISTER_ID)i)->GetValueInt();
 							memcpy(data->data, &val, data->size);
 						}
 							break;
 						case rtFloat:
 						{
 							data->size = 4;
-							float val = ch->GetRegister((REGISTER_ID)i)->GetValueFloat();
+							auto val = ch->GetRegister((REGISTER_ID)i)->GetValueFloat();
 							memcpy(data->data, &val, data->size);
 						}
 							break;

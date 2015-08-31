@@ -18,24 +18,24 @@
 CConfiguration::CConfiguration(WorkManager* workManager) : _workManager(workManager)
 {
     _isInitialized = false;
-    _arincInIndex = NULL;
-    _arincOutIndex = NULL;
+    _arincInIndex = nullptr;
+    _arincOutIndex = nullptr;
     _syncUse = 0;
 
-	for(UINT i = 0; i < (UINT)REGISTER_ID::COUNTREGISTERS; i++)
+	for(UINT i = 0; i < static_cast<UINT>(REGISTER_ID::COUNTREGISTERS); i++)
 		registers_t[i].id = REGISTER_ID::NULLID;
 
-    registers_t[(UINT)REGISTER_ID::rVERSION] = {REGISTER_ID::rVERSION, rwConstant, rtString, 0,0,0, true};
-    registers_t[(UINT)REGISTER_ID::rNAME] = {REGISTER_ID::rNAME,    rwConstant, rtString, 0,0,0, true};
-	registers_t[(UINT)REGISTER_ID::rDATABASENUM] = {REGISTER_ID::rDATABASENUM, rwConstant, rtDec, 0,9999,0, true};
+    registers_t[static_cast<UINT>(REGISTER_ID::rVERSION)] = {REGISTER_ID::rVERSION, rwConstant, rtString, 0,0,0, true};
+    registers_t[static_cast<UINT>(REGISTER_ID::rNAME)] = {REGISTER_ID::rNAME,    rwConstant, rtString, 0,0,0, true};
+	registers_t[static_cast<UINT>(REGISTER_ID::rDATABASENUM)] = {REGISTER_ID::rDATABASENUM, rwConstant, rtDec, 0,9999,0, true};
 	registers_t[static_cast<UINT>(REGISTER_ID::rSETTINGSNUM)] = {REGISTER_ID::rSETTINGSNUM, rwConstant, rtDec, 0,99,0, false};
 
-	for(UINT i = 0; i < (UINT)REGISTER_ID::COUNTREGISTERS; i++)
+	for(UINT i = 0; i < static_cast<UINT>(REGISTER_ID::COUNTREGISTERS); i++)
 	{
 		if (registers_t[i].id != REGISTER_ID::NULLID)
 			registers_t[i].reg = new CRegister();
 		else
-			registers_t[i].reg = NULL;
+			registers_t[i].reg = nullptr;
 	}
 }
 
@@ -51,7 +51,7 @@ void CConfiguration::ProcessLogic()
 	{
 		// Контейнерные каналы входов
 		for(UINT i = 0; i < DriversIOManager::arincInCount; i++)
-			if (_arincInIndex[i] != NULL)
+			if (_arincInIndex[i] != nullptr)
 				_arincInIndex[i]->UpdateHWToData();
 		// Остальные каналы
 		for(UINT i = 0; i < channelList.size(); i++)
@@ -61,13 +61,13 @@ void CConfiguration::ProcessLogic()
 			else if (IS_OUT(channelList[i]->GetType()))
 			{
 				channelList[i]->UpdateHWToData();
-				((IChannelOut*)channelList[i])->GetProcessor()->Convert();
+				static_cast<IChannelOut*>(channelList[i])->GetProcessor()->Convert();
 				channelList[i]->UpdateDataToHW();
 			}
 		}
 		// Контейнерные каналы выходов
 		for(UINT i = 0; i < DriversIOManager::arincOutCount; i++)
-			if (_arincOutIndex[i] != NULL)
+			if (_arincOutIndex[i] != nullptr)
 				_arincOutIndex[i]->UpdateDataToHW();
 	}
 }
@@ -76,17 +76,17 @@ IO_GROUP_STATE CConfiguration::GetState()
 	auto state = _workManager->GetDriversIO()->GetState();
 	if (IsInitialized())
 	{
-		state.iostArincIn1Fail = _arincInIndex[0] != NULL && _arincInIndex[0]->IsDataExists() ? state.iostArincIn1Fail : 0;
-		state.iostArincIn2Fail = _arincInIndex[1] != NULL && _arincInIndex[1]->IsDataExists() ? state.iostArincIn2Fail : 0;
-		state.iostArincIn3Fail = _arincInIndex[2] != NULL && _arincInIndex[2]->IsDataExists() ? state.iostArincIn3Fail : 0;
-		state.iostArincIn4Fail = _arincInIndex[3] != NULL && _arincInIndex[3]->IsDataExists() ? state.iostArincIn4Fail : 0;
-		state.iostArincIn5Fail = _arincInIndex[4] != NULL && _arincInIndex[4]->IsDataExists() ? state.iostArincIn5Fail : 0;
-		state.iostArincIn6Fail = _arincInIndex[5] != NULL && _arincInIndex[5]->IsDataExists() ? state.iostArincIn6Fail : 0;
+		state.iostArincIn1Fail = _arincInIndex[0] != nullptr && _arincInIndex[0]->IsDataExists() ? state.iostArincIn1Fail : 0;
+		state.iostArincIn2Fail = _arincInIndex[1] != nullptr && _arincInIndex[1]->IsDataExists() ? state.iostArincIn2Fail : 0;
+		state.iostArincIn3Fail = _arincInIndex[2] != nullptr && _arincInIndex[2]->IsDataExists() ? state.iostArincIn3Fail : 0;
+		state.iostArincIn4Fail = _arincInIndex[3] != nullptr && _arincInIndex[3]->IsDataExists() ? state.iostArincIn4Fail : 0;
+		state.iostArincIn5Fail = _arincInIndex[4] != nullptr && _arincInIndex[4]->IsDataExists() ? state.iostArincIn5Fail : 0;
+		state.iostArincIn6Fail = _arincInIndex[5] != nullptr && _arincInIndex[5]->IsDataExists() ? state.iostArincIn6Fail : 0;
 
-		state.iostArincOut1Fail = _arincOutIndex[0] != NULL && _arincOutIndex[0]->IsDataExists() ? state.iostArincOut1Fail : 0;
-		state.iostArincOut2Fail = _arincOutIndex[1] != NULL && _arincOutIndex[1]->IsDataExists() ? state.iostArincOut2Fail : 0;
-		state.iostArincOut3Fail = _arincOutIndex[2] != NULL && _arincOutIndex[2]->IsDataExists() ? state.iostArincOut3Fail : 0;
-		state.iostArincOut4Fail = _arincOutIndex[3] != NULL && _arincOutIndex[3]->IsDataExists() ? state.iostArincOut4Fail : 0;
+		state.iostArincOut1Fail = _arincOutIndex[0] != nullptr && _arincOutIndex[0]->IsDataExists() ? state.iostArincOut1Fail : 0;
+		state.iostArincOut2Fail = _arincOutIndex[1] != nullptr && _arincOutIndex[1]->IsDataExists() ? state.iostArincOut2Fail : 0;
+		state.iostArincOut3Fail = _arincOutIndex[2] != nullptr && _arincOutIndex[2]->IsDataExists() ? state.iostArincOut3Fail : 0;
+		state.iostArincOut4Fail = _arincOutIndex[3] != nullptr && _arincOutIndex[3]->IsDataExists() ? state.iostArincOut4Fail : 0;
 
 		state.iostSync1Fail = (_syncUse & 1) ? state.iostSync1Fail : 0;
 		state.iostSync2Fail = (_syncUse & 2) ? state.iostSync2Fail : 0;
@@ -107,15 +107,15 @@ CConfiguration::LOAD_RESULT CConfiguration::LoadConfig()
     //manager.utils.GetTerminal().WriteLine("Загрузка конфигурации не поддерживается, загрузите соответствующее ПО");
     //manager.drivers.GetComMod().SetErrorLoad();
 #else
-	LOAD_RESULT lresult = LOAD_RESULT::Error;
-	CParserConfig* parserC = new CParserConfig(this, _workManager->GetConsole(), _workManager->GetCommod(), _workManager->GetDriversIO());
-	int result = parserC->LoadConfiguration();
+	auto lresult = LOAD_RESULT::Error;
+	auto parserC = new CParserConfig(this, _workManager->GetConsole(), _workManager->GetCommod(), _workManager->GetDriversIO());
+	auto result = parserC->LoadConfiguration();
 	delete parserC;
 	for(UINT i = 0; i < patterns.size(); i++)
 	{
 		if (!GetPattern(i)->IsConstant())
 		{
-			CParserDevice* parser = new CParserDevice(GetPattern(i)->GetDeviceNum(), this, *patterns[i], _workManager->GetConsole(), _workManager->GetCommod());
+			auto parser = new CParserDevice(GetPattern(i)->GetDeviceNum(), this, *patterns[i], _workManager->GetConsole(), _workManager->GetCommod());
 			result += parser->LoadConfiguration();
 			delete parser;
 		}
@@ -203,14 +203,14 @@ void CConfiguration::ScanChannel(std::vector<IChannel*>& scanningChannels, IChan
 		{
 			if (IS_OUT(chs[i]->GetType()))
 			{
-				ScanChannel(scanningChannels, (IChannelOut*)chs[i]);
+				ScanChannel(scanningChannels, static_cast<IChannelOut*>(chs[i]));
 			}
 			else if (chs[i]->GetType() == ioLogicalIn)
 			{
 				BYTE ptn;
 				IOTYPES type;
 				BYTE num;
-				int res = GetConnection(chs[i]->GetPatternIndex(), chs[i]->GetType(), chs[i]->GetNumber(), ptn, type, num);
+				auto res = GetConnection(chs[i]->GetPatternIndex(), chs[i]->GetType(), chs[i]->GetNumber(), ptn, type, num);
 				if (res >= 0)
 				{
 					//Console::TraceLine(">> %d", ptn);
@@ -246,8 +246,8 @@ void CConfiguration::PrepareLogicSequence()
 
 UINT CConfiguration::AddPattern(bool constant)
 {
-	patterns.push_back(new CPattern(_workManager->GetDriversIO(), this, (UINT)patterns.size(), constant));
-	return (UINT)(patterns.size() - 1);
+	patterns.push_back(new CPattern(_workManager->GetDriversIO(), this, static_cast<UINT>(patterns.size()), constant));
+	return static_cast<UINT>(patterns.size() - 1);
 }
 
 int CConfiguration::AddConnection(BYTE sp, IOTYPES st, BYTE sn, BYTE dp, IOTYPES dt, BYTE dn)
@@ -306,7 +306,7 @@ int CConfiguration::GetConnection(BYTE sp, IOTYPES st, BYTE sn, BYTE &dp, IOTYPE
 	pin.num = sn;
 	pin.pat = sp;
 	pin.type = st;
-	int res = IndexOfPin(pin);
+	auto res = IndexOfPin(pin);
 	if (res == -1)
 		return -1;
 	if (IS_OUT(st))
@@ -326,9 +326,9 @@ int CConfiguration::GetConnection(BYTE sp, IOTYPES st, BYTE sn, BYTE &dp, IOTYPE
 BYTE CConfiguration::GetChannelHWNum(IChannel* ch)
 {
 	if (ch->GetType() == ioArincWordIn)
-		return ((ChArincWordIn*)ch)->GetChannel()->GetNumber();
+		return static_cast<ChArincWordIn*>(ch)->GetChannel()->GetNumber();
 	else if (ch->GetType() == ioArincWordOut)
-		return ((ChArincWordOut*)ch)->GetChannel()->GetNumber();
+		return static_cast<ChArincWordOut*>(ch)->GetChannel()->GetNumber();
 	else
 	{
 		BYTE chNum;
@@ -400,7 +400,7 @@ void CConfiguration::DefineChannelFailIndex()
 				connections[c].dst.pat == 0xFF &&
 				connections[c].dst.type == ioDigitalOut)
 			{
-				_arincOutIndex[i] = (ChArincOut*)GetPattern(connections[c].src.pat)->GetOutput(ioDigitalOut, connections[c].src.num);
+				_arincOutIndex[i] = static_cast<ChArincOut*>(GetPattern(connections[c].src.pat)->GetOutput(ioDigitalOut, connections[c].src.num));
 				break;
 			}
 	}
@@ -408,12 +408,12 @@ void CConfiguration::DefineChannelFailIndex()
 
 IChannel* CConfiguration::GetArincIn(UINT number)
 {
-	return number < DriversIOManager::arincInCount ? (IChannel*)_arincInIndex[number] : NULL;
+	return number < DriversIOManager::arincInCount ? static_cast<IChannel*>(_arincInIndex[number]) : NULL;
 }
 
 IChannel* CConfiguration::GetArincOut(UINT number)
 {
-	return number < DriversIOManager::arincOutCount? (IChannel*)_arincOutIndex[number] : NULL;
+	return number < DriversIOManager::arincOutCount? static_cast<IChannel*>(_arincOutIndex[number]) : NULL;
 }
 
 

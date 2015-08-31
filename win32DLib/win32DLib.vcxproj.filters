@@ -246,6 +246,9 @@
     <ClCompile Include="ucu_fw\src\utilities\menu.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
+    <ClCompile Include="ucu_fw\src\ubsWrapper.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ucu_fw\src\application\cconfiguration.h">
@@ -494,7 +497,10 @@
     <ClInclude Include="ucu_fw\src\utilities\menu.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="ucu_fw\src\ubsDllHeader.h">
+    <ClInclude Include="ucu_fw\src\Factory.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="ucu_fw\src\ubsWrapper.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>

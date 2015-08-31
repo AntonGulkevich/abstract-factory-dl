@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ucu_fw\src\ubsWrapper.cpp" />
     <ClCompile Include="ucu_fw\src\application\cconfiguration.cpp" />
     <ClCompile Include="ucu_fw\src\application\cconstPatterns.cpp" />
     <ClCompile Include="ucu_fw\src\application\cpattern.cpp" />
@@ -293,13 +294,14 @@
     <ClInclude Include="ucu_fw\src\interfaces\iusingirq.h" />
     <ClInclude Include="ucu_fw\src\pldmemorycontrol.h" />
     <ClInclude Include="ucu_fw\src\types.h" />
-    <ClInclude Include="ucu_fw\src\ubsDllHeader.h" />
+    <ClInclude Include="ucu_fw\src\Factory.h" />
     <ClInclude Include="ucu_fw\src\utilities\calibrationmanager.h" />
     <ClInclude Include="ucu_fw\src\utilities\commod.h" />
     <ClInclude Include="ucu_fw\src\utilities\console.h" />
     <ClInclude Include="ucu_fw\src\utilities\diagnostic.h" />
     <ClInclude Include="ucu_fw\src\utilities\failmanager.h" />
     <ClInclude Include="ucu_fw\src\utilities\fwloader.h" />
+    <ClInclude Include="ucu_fw\src\ubsWrapper.h" />
     <ClInclude Include="ucu_fw\src\utilities\menu.h" />
     <ClInclude Include="ucu_fw\src\utilities\menu\menuitem.h" />
     <ClInclude Include="ucu_fw\src\utilities\menu\submenu.h" />

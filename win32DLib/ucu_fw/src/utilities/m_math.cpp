@@ -8,16 +8,16 @@ unsigned int ftou__(float constant)
 	if (pow & 0x80)
 		return 0;
 	unsigned int val = (((*reinterpret_cast<int*>(&constant)) & 0x7FFFFF) | 0x800000);
-	unsigned int retval = (pow <= 23 ?  (val >> (23 - pow)) : (pow > 54 ? 0 : (val << (pow - 23))));
-	return ((*reinterpret_cast<DWORD*>(&constant)) & 0x80000000) ? -retval : retval;
+	auto retval = (pow <= 23 ?  (val >> (23 - pow)) : (pow > 54 ? 0 : (val << (pow - 23))));
+	return ((*reinterpret_cast<DWORD*>(&constant)) & 0x80000000) ? static_cast<UINT>(-static_cast<int>(retval)) : retval;
 }
 
 
 
 int NOK(int a, int b, int& gcd) // Наименьшее общее кратное  /  gcd - НОД
 {
-    int oldA = a;
-	int oldB = b;
+	auto oldA = a;
+	auto oldB = b;
 	int x1;
     int y1;
     int x2;
@@ -72,12 +72,12 @@ CRC32::CRC32()
 
 void CRC32::ProcessCRC(void* pData, DWORD nLen)
 {
-	const UINT CRC_MASK = 0x8DD202EF;
-	BYTE* pdata = reinterpret_cast<BYTE*>(pData);
-	UINT crc = _crc32;
+	const auto CRC_MASK = 0x8DD202EF;
+	auto pdata = reinterpret_cast<BYTE*>(pData);
+	auto crc = _crc32;
 	while (nLen--)
 	{
-		crc = table[(BYTE)crc ^ *pdata++] ^ crc >> 8;
+		crc = table[static_cast<BYTE>(crc) ^ *pdata++] ^ crc >> 8;
 		crc ^= CRC_MASK;
 	}
 	_crc32 = crc;

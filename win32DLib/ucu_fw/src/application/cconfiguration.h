@@ -30,7 +30,7 @@ public:
 
 	CPattern* GetPattern(BYTE index)	{	return patterns[index]; }
 	CPattern* GetPatternByDeviceNum(BYTE deviceNum)	{	return deviceNumIndex[deviceNum]; }
-	UINT GetPatternCount()	{	return patterns.size(); }
+	UINT GetPatternCount() const {	return patterns.size(); }
 	UINT AddPattern(bool constant = false);
 	CConstPatternEngine& GetConstPatterns()	{	return constPatterns; }
 
