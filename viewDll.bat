@@ -1,0 +1,1 @@
+dumpbin /EXPORTS D:\ubs\Dev\lib\win32DLib\Debug\win32DLib.dll > D:\ubs\Dev\lib\win32DLib\Debug\win32DLib.txt

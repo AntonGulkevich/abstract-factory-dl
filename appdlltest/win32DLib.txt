@@ -1,0 +1,32 @@
+Microsoft (R) COFF/PE Dumper Version 14.00.23026.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file D:\ubs\Dev\lib\win32DLib\Debug\win32DLib.dll
+
+File Type: DLL
+
+  Section contains the following exports for win32DLib.dll
+
+    00000000 characteristics
+    55EE8196 time date stamp Tue Sep  8 09:35:02 2015
+        0.00 version
+           1 ordinal base
+           1 number of functions
+           1 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0004A77A returnFactory = @ILT+6005(_returnFactory)
+
+  Summary
+
+        1000 .00cfg
+        F000 .data
+        1000 .idata
+        F000 .rdata
+        6000 .reloc
+        1000 .rsrc
+       9B000 .text
+       48000 .textbss
+        1000 .tls
