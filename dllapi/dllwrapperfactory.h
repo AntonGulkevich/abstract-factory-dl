@@ -7,25 +7,13 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "../driversio/ichannel.h"
-#include "../compilier/CParser.h"
 #include "../workmanager.h"
 #include "../driversio/cregister.h"
 #include "../application/cconfiguration.h"
+#include "../drivermanager.h"
+#include "../driversiomanager.h"
+#include "../drivers/perfomancecounter.h"
 
-class DriverManager;
-class DriversIOManager;
-class CPattern;
-class Commod;
-class Console;
-enum eProducts
-{
-	CONFIGURATION, 
-	PARCER,
-	CHANNEL,
-	WORKMANAGER,
-	REGISTER
-};
 
 class DllWrapperFactory
 {
@@ -35,6 +23,9 @@ public:
 	virtual CConfiguration * __stdcall CreateConfiguration(WorkManager* workManager) = 0;
 	virtual WorkManager * __stdcall CreateWorkManager(DriversIOManager* driversIO, DriverManager* drivers) = 0;
 	virtual CRegister * __stdcall CreateCRegister() = 0;
+	virtual DriverManager * __stdcall CreateDriverManager() = 0;
+	virtual DriversIOManager *__stdcall CreateDriversIoManager() = 0;
+	virtual PerfomanceCounter *__stdcall CreatePerfomanceCounter(DWORD baseAddress) = 0;
 };
 
 #endif // !defined(AFX_DLLWRAPPERFACTORY_H__6878082E_F1BB_4FA5_A493_45E9EF20959D__INCLUDED_)

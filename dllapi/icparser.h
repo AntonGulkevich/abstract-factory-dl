@@ -3,12 +3,13 @@
 
 #include "../types.h"
 
+#define _PARSER_FULLDIAGNOSTIC
+
 class Console;
 class Commod;
 
-class ICParser
+struct ICParser
 {
-public:
 	// Список возможных типов токенов
 	enum TOKENCLASS
 	{
@@ -49,7 +50,7 @@ public:
 		UINT dec;		// Данные токена
 		float flo;
 		char* str;
-#ifdef _UCU_EMULATION
+#ifdef _PARSER_FULLDIAGNOSTIC
 		BYTE symNum;	// номер символа в строке
 		WORD strNum;	// номер строки
 #endif

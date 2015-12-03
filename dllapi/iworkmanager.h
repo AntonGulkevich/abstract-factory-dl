@@ -3,20 +3,18 @@
 
 #include "../types.h"
 
-class CalibrationManager;
-class FailManager;
-class CConfiguration;
-class Console;
-class Diagnostic;
-class Commod;
+struct CalibrationManager;
+struct FailManager;
+struct CConfiguration;
+struct Console;
+struct Diagnostic;
+struct Commod;
 enum class Flags;
-class DriverManager;
-class DriversIOManager;
+struct DriverManager;
+struct DriversIOManager;
 
-class IWorkManager
+struct IWorkManager
 {
-
-public:
 	virtual ~IWorkManager(){};
 	virtual void Init() const = 0;
 	virtual DISPATH_RESULT ProcessFlag(Flags id) = 0;
@@ -28,6 +26,8 @@ public:
 	virtual CConfiguration* GetConfiguration() const = 0;
 	virtual FailManager* GetFailManager() const = 0;
 	virtual CalibrationManager* GetCalibrationManager() const = 0;
+	virtual bool ValidateConfig() const = 0;
+	virtual void initCommod() const = 0;
 };
 
 #endif

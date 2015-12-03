@@ -2,9 +2,8 @@
 #define ICREGISTER
 #include "../types.h"
 
-class ICRegister
+struct ICRegister
 {
-public:
 	virtual ~ICRegister() {};
 	virtual float GetValueFloat() const = 0;
 	virtual UCU_FLOAT GetValueUCUFloat() const = 0;

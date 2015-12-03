@@ -3,12 +3,19 @@
 
 #include "../types.h"
 
-class IIChannel
+class ChannelCalibration;
+class ChannelFilter;
+class ChannelRate;
+class CRegister;
+
+struct IIChannel
 {
-public:
 	enum class CheckConfigurationResult
 	{
 		OK,
+		RegisterNotFilled,
+		TarMinMaxNotFilled,
+		FormatNotCorrect,
 		Error,
 	};
 	typedef struct _REGISTER_TYPE
@@ -25,10 +32,10 @@ public:
 
 	struct ChannelData
 	{
-		BYTE channelPattern;
-		BYTE channelType;
-		BYTE channelNum;
-		BYTE channelHWNum;
+		UINT channelPattern;
+		UINT channelType;
+		UINT channelNum;
+		UINT channelHWNum;
 	};
 	virtual ~IIChannel(){};
 	virtual UINT GetNumber() const = 0;

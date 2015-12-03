@@ -1,0 +1,48 @@
+﻿  AppDllTest.cpp
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\driversiohw\analogin.h(149): warning C4244: 'initializing': conversion from 'float' to 'UINT', possible loss of data
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\driversiohw\analogin.h(168): warning C4244: 'return': conversion from 'DWORD' to 'BYTE', possible loss of data
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\driversiohw/sctout.h(71): warning C4244: 'return': conversion from 'DWORD' to 'WORD', possible loss of data
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\driversiohw/sctout.h(72): warning C4244: 'return': conversion from 'DWORD' to 'WORD', possible loss of data
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\driversiohw/nptout.h(51): warning C4244: 'return': conversion from 'DWORD' to 'WORD', possible loss of data
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\driversiomanager.h(43): warning C4099: 'DriversIOManager': type name first seen using 'struct' now seen using 'class'
+  d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\driversiomanager.h(43): note: see declaration of 'DriversIOManager'
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\utilities/usersettingmanager.h(12): warning C4099: 'CConfiguration': type name first seen using 'struct' now seen using 'class'
+  d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi/iworkmanager.h(8): note: see declaration of 'CConfiguration'
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\utilities/usersettingmanager.h(13): warning C4099: 'Commod': type name first seen using 'struct' now seen using 'class'
+  d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi/iworkmanager.h(11): note: see declaration of 'Commod'
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi\../workmanager.h(18): warning C4099: 'Commod': type name first seen using 'struct' now seen using 'class'
+  d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\utilities/usersettingmanager.h(13): note: see declaration of 'Commod'
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi\../workmanager.h(19): warning C4099: 'Diagnostic': type name first seen using 'struct' now seen using 'class'
+  d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi/iworkmanager.h(10): note: see declaration of 'Diagnostic'
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi\../workmanager.h(20): warning C4099: 'Console': type name first seen using 'struct' now seen using 'class'
+  d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi/iworkmanager.h(9): note: see declaration of 'Console'
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi\../workmanager.h(21): warning C4099: 'CConfiguration': type name first seen using 'struct' now seen using 'class'
+  d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\utilities/usersettingmanager.h(12): note: see declaration of 'CConfiguration'
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi\../workmanager.h(22): warning C4099: 'FailManager': type name first seen using 'struct' now seen using 'class'
+  d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi/iworkmanager.h(7): note: see declaration of 'FailManager'
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi\../workmanager.h(23): warning C4099: 'CalibrationManager': type name first seen using 'struct' now seen using 'class'
+  d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi/iworkmanager.h(6): note: see declaration of 'CalibrationManager'
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi\../driversio/cregister.h(7): warning C4099: 'Diagnostic': type name first seen using 'struct' now seen using 'class'
+  d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi\../workmanager.h(19): note: see declaration of 'Diagnostic'
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi\../application/cconfiguration.h(12): warning C4099: 'CProcessor': type name first seen using 'struct' now seen using 'class'
+  d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\application\../dllAPI/ICConfiguration.h(5): note: see declaration of 'CProcessor'
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi\../application/cconfiguration.h(13): warning C4099: 'IChannelOut': type name first seen using 'struct' now seen using 'class'
+  d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\application\../dllAPI/ICConfiguration.h(6): note: see declaration of 'IChannelOut'
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi\../application/cconfiguration.h(19): warning C4099: 'CConfiguration': type name first seen using 'struct' now seen using 'class'
+  d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi\../application/cconfiguration.h(19): note: see declaration of 'CConfiguration'
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\drivers/perfomancecounter.h(55): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\drivers/perfomancecounter.h(56): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\drivers/perfomancecounter.h(57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\drivers/perfomancecounter.h(58): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\utilities/commod.h(12): warning C4099: 'Commod': type name first seen using 'struct' now seen using 'class'
+  d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\utilities/commod.h(11): note: see declaration of 'Commod'
+d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi\../drivermanager.h(30): warning C4099: 'DriverManager': type name first seen using 'struct' now seen using 'class'
+  d:\ubs\убс-к мод.1\dev\soft\ucu_workspace\ucu_fw\src\dllapi\../drivermanager.h(30): note: see declaration of 'DriverManager'
+AppDllTest.cpp(38): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+AppDllTest.cpp(49): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  Generating code
+  All 225 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  AppDllTest.vcxproj -> D:\ubs\УБС-К мод.1\Dev\Soft\Release\AppDllTest.exe

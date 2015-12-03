@@ -17,4 +17,19 @@ CRegister* Factory::CreateCRegister()
 {
 	return (new CRegister());
 }
+
+DriverManager* Factory::CreateDriverManager()
+{
+	return (new DriverManager());
+}
+
+DriversIOManager* Factory::CreateDriversIoManager()
+{
+	return (new DriversIOManager());
+}
+
+PerfomanceCounter* Factory::CreatePerfomanceCounter(DWORD baseAddress)
+{
+	return (new PerfomanceCounter(baseAddress));
+}
 #endif
